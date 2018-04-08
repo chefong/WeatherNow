@@ -1,28 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import Head from './Head';
-import Footer from './Foot';
 import UserForm from './UserForm';
 
 //return an array containing 2 colors for the gradient
-function dayNight() {
-	var current = Date();
-	if (current.get)
-}
 
 class App extends Component {
+	dayNight() {
+		var current = new Date();
+		if (current.getHours() >= 0 && current.getHours() <= 6) {
+			console.log("It is early morning");
+		}
+		else if (current.getHours() > 6 && current.getHours() <= 12) {
+			console.log("It is late morning and almost afternoon");
+		}
+		else if (current.getHours() > 12 && current.getHours() <= 16) {
+			console.log("It is afternoon");
+		}
+		else if (current.getHours() > 16 && current.getHours() <= 19) {
+			console.log("It is evening");
+		}
+		else {
+			console.log("It is night");
+		}
+	}
     render() {
+    	this.dayNight();
         return (
-            <div class="container-fluid">
-            	<div class="row justify-content-center">
-            		<div class="col-6">
-                		<Head/>
-                	</div>
+            <div className="container-fluid">
+            	<div className="row justify-content-center">
+                	<img id="logo" alt="weather now logo" src={require("./imgs/weather-now-logo.png")}/>
                 </div>
-                <div class="row justify-content-center">
-                	<div class="col-2">
+                <div className="row justify-content-center">
+                	<div className="col-2">
                 		<UserForm/>
                 	</div>
                 </div>

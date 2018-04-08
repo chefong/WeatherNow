@@ -4,10 +4,10 @@ import './UserForm.css';
 class UserForm extends React.Component {
 	render() {
 		return (
-			<div class="input-group mb-3">
-			  <input type="text" class="form-control" placeholder="Zipcode" aria-label="Zipcode" aria-describedby="basic-addon2"/>
-			  <div class="input-group-append">
-			    <button class="btn btn-outline-secondary" type="button">Submit</button>
+			<div className="input-group mb-3">
+			  <input type="text" className="form-control" placeholder="Zipcode" aria-label="Zipcode" aria-describedby="basic-addon2"/>
+			  <div className="input-group-append">
+			    <button className="btn btn-secondary" type="button">Submit</button>
 			  </div>
 			</div>
 		);
