@@ -20,23 +20,25 @@ class App extends React.Component {
     e.preventDefault();
 
     const LOCATION = e.target.elements.location.value;
-    const LOCATION_API_CALL = await fetch(`http://dataservice.accuweather.com/locations/v1/search?apikey=${API_KEY}&q=${LOCATION}`);
-    const LOCATION_DATA = await LOCATION_API_CALL.json();
-    let resultLocation = LOCATION_DATA[0];
-    let locationKey = resultLocation.Key;
+    if (LOCATION) {
+      const LOCATION_API_CALL = await fetch(`http://dataservice.accuweather.com/locations/v1/search?apikey=${API_KEY}&q=${LOCATION}`);
+      const LOCATION_DATA = await LOCATION_API_CALL.json();
+      let resultLocation = LOCATION_DATA[0];
+      let locationKey = resultLocation.Key;
 
-    const FORECAST_API_CALL = await fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${API_KEY}`);
-    const FORECAST_DATA = await FORECAST_API_CALL.json();
-    // let temperature = FORECAST_DATA.DailyForecasts[0].Temperature;
+      const FORECAST_API_CALL = await fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${API_KEY}`);
+      const FORECAST_DATA = await FORECAST_API_CALL.json();
+      // let temperature = FORECAST_DATA.DailyForecasts[0].Temperature;
 
-    this.setState({
-      name: resultLocation.LocalizedName,
-      area: resultLocation.AdministrativeArea.LocalizedName,
-      country: resultLocation.Country.LocalizedName,
-      highTemp: FORECAST_DATA.DailyForecasts[0].Temperature.Maximum.Value,
-      lowTemp: FORECAST_DATA.DailyForecasts[0].Temperature.Minimum.Value,
-      locationKey: locationKey,
-    })
+      this.setState({
+        name: resultLocation.LocalizedName,
+        area: resultLocation.AdministrativeArea.LocalizedName,
+        country: resultLocation.Country.LocalizedName,
+        highTemp: FORECAST_DATA.DailyForecasts[0].Temperature.Maximum.Value,
+        lowTemp: FORECAST_DATA.DailyForecasts[0].Temperature.Minimum.Value,
+        locationKey: locationKey,
+      })
+    }
 
   }
 
