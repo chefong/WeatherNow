@@ -1,44 +1,35 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from "react";
+import Title from "./components/Title";
+import Form from "./components/Form";
+import Weather from "./components/Weather";
 
-import UserForm from './UserForm';
+const API_KEY = process.env.REACT_APP_API_KEY;
 
-//return an array containing 2 colors for the gradient
+class App extends React.Component {
 
-class App extends Component {
-	dayNight() {
-		var current = new Date();
-		if (current.getHours() >= 0 && current.getHours() <= 6) {
-			console.log("It is early morning");
-		}
-		else if (current.getHours() > 6 && current.getHours() <= 12) {
-			console.log("It is late morning and almost afternoon");
-		}
-		else if (current.getHours() > 12 && current.getHours() <= 16) {
-			console.log("It is afternoon");
-		}
-		else if (current.getHours() > 16 && current.getHours() <= 19) {
-			console.log("It is evening");
-		}
-		else {
-			console.log("It is night");
-		}
+  getWeatherData = async (e) => {
+    e.preventDefault();
+
+    const LOCATION = e.target.elements.location.value;
+
+    const LOCATION_API_CALL = await fetch(`http://dataservice.accuweather.com/locations/v1/search?apikey=${API_KEY}&q=${LOCATION}`);
+    const LOCATION_DATA = await LOCATION_API_CALL.json();
+
+    // console.log(WEATHER_DATA);
+    let result = LOCATION_DATA[0];
+    let locationKey = result.Key;
+    console.log(locationKey);
+  }
+
+  render() {
+    return (
+      <div>
+        <Title />
+        <Form weather={ this.getWeatherData }/>
+        <Weather />
+      </div>
+    );
 	}
-    render() {
-    	this.dayNight();
-        return (
-            <div className="container-fluid">
-            	<div className="row justify-content-center">
-                	<img id="logo" alt="weather now logo" src={require("./imgs/weather-now-logo.png")}/>
-                </div>
-                <div className="row justify-content-center">
-                	<div className="col-2">
-                		<UserForm/>
-                	</div>
-                </div>
-            </div>
-        );
-    }
 }
 
 export default App;
