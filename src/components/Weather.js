@@ -1,11 +1,12 @@
 import React from "react";
+import './Weather.css';
 
 const Weather = props => {
   return(
     <div>
-      { props.name && props.area && props.country && <h4> Current temperature for: { props.name }, { props.area }, { props.country }</h4> }
-      { props.high && <h6> High: { props.high }</h6> }
-      { props.low && <h6> Low: { props.low }</h6> }
+      { props.name && props.area && props.country && <h4> Results for { props.name }, { props.area }, { props.country }</h4> }
+      { props.high && <p className="temperature"> High: { props.high } &deg;F</p> }
+      { props.low && <p className="temperature"> Low: { props.low } &deg;F</p> }
     </div>
   );
 }
