@@ -118,20 +118,23 @@ class App extends React.Component {
                 <Form weather= { this.getWeatherData } />
               </div>
             </div>
-            <div className="row">
-              <Weather
-                name = { this.state.name }
-                area = { this.state.area }
-                country = { this.state.country }
-                weatherStatus = { this.state.weatherStatus }
-                weatherImages = { weatherImages }
-                iconNumber = { this.state.iconNumber }
-                currentTempF = { this.state.currentTempF }
-                currentTempC = { this.state.currentTempC }
-                high = { this.state.highTemp }
-                low = { this.state.lowTemp }
-                locationKey = { this.state.locationKey }
-              />
+            <div className="row justify-content-center">
+              <div className="col-md-4">
+                { this.state.name && this.state.area && this.state.country && <h5 id="result-label">Results for { this.state.name }, { this.state.area }, { this.state.country }</h5> }
+                <Weather
+                  name = { this.state.name }
+                  area = { this.state.area }
+                  country = { this.state.country }
+                  weatherStatus = { this.state.weatherStatus }
+                  weatherImages = { weatherImages }
+                  iconNumber = { this.state.iconNumber }
+                  currentTempF = { this.state.currentTempF }
+                  currentTempC = { this.state.currentTempC }
+                  high = { this.state.highTemp }
+                  low = { this.state.lowTemp }
+                  locationKey = { this.state.locationKey }
+                />
+              </div>
             </div>
           </div>
         </div>

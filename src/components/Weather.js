@@ -57,11 +57,16 @@ class Weather extends React.Component {
 
   render() {
     return(
-      <div>
-        { this.props.name && this.props.area && this.props.country && <h4> Results for { this.props.name }, { this.props.area }, { this.props.country }</h4> }
-        { this.props.high && <p className="temperature"> High: { this.props.high } &deg;F</p> }
-        { this.props.low && <p className="temperature"> Low: { this.props.low } &deg;F</p> }
-        { this.props.iconNumber && <img id="weather-status-icon" src={this.props.weatherImages[this.props.iconNumber - 1]}/> }
+      <div className="row justify-content-center" id="current-weather-container">
+        <div className="col-md-4 condition-columns">
+          { this.props.iconNumber && <div id="weather-image-container"><img id="weather-status-icon" src={this.props.weatherImages[this.props.iconNumber - 1]}/></div> }
+          { this.props.weatherStatus && <p className="weather-text" id="weather-status">{ this.props.weatherStatus }</p>}
+        </div>
+        <div className="col-md-6 condition-columns" id="right-conditions">
+          { this.props.high && <h6 className="weather-text" id="current-text"><em>Current conditions:</em></h6> }
+          { this.props.high && <p className="weather-text" id="high-text"> High: { this.props.high } &deg;F</p> }
+          { this.props.low && <p className="weather-text" id="low-text"> Low: { this.props.low } &deg;F</p> }
+        </div>
       </div>
     );
   }

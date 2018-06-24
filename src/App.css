@@ -13,3 +13,9 @@ body {
 #form-field {
   text-align: center;
 }
+
+#result-label {
+  margin-top: 5%;
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+}
