@@ -1,0 +1,15 @@
+.image {
+  background: url("imgs/minimalistic.png");
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  filter: blur(5px);
+}
+
+#main {
+  z-index: 2;
+}

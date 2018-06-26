@@ -1,13 +1,13 @@
 .weather-text {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 130%;
-  color: #505050;
+  font-size: 140%;
+  color: #484848;
 }
 
 #weather-status-icon {
-  width: 10vh;
+  width: 15vh;
   margin-top: 12%;
-  margin-bottom: 15%;
+  margin-bottom: 10%;
 }
 
 #weather-image-container {
@@ -25,22 +25,35 @@
 
 #current-weather-container {
   border-radius: 15px;
-  margin-top: 5%;
+  margin-top: 10%;
 }
 
 #current-text {
   font-family: 'Josefin Sans', sans-serif;
-  padding-top: 10%;
+  padding-top: 20%;
+  padding-bottom: 10%;
 }
 
 #weather-status {
   text-align: center;
 }
 
-#right-conditions {
-  padding-left: 8%;
+#left {
+  float: left;
+  padding: 2% 5%;
 }
 
-.condition-columns {
-  background-color: white;
+#right {
+  float: right;
+  padding: 2% 5%;
+}
+
+#fahr {
+  float: left;
+  font-size: 150%;
+}
+
+#cel {
+  float: right;
+  font-size: 150%;
 }
