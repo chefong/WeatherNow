@@ -1,0 +1,23 @@
+.day-night-status {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 120%;
+  color: #484848;
+  text-align: center;
+}
+
+.day-night {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 150%;
+  color: #484848;
+  text-align: center;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
+.weather-status-five-icon {
+  width: 5vh;
+}
+
+.weather-image-five-container {
+  text-align: center;
+}

@@ -1,0 +1,43 @@
+.weather-text {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 140%;
+  color: #484848;
+}
+
+#weather-status-icon {
+  width: 15vh;
+  margin-bottom: 5%;
+}
+
+#current-text {
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: 10%;
+  color: #484848;
+}
+
+#current-temp {
+  margin-top: 6%;
+  margin-bottom: 10%;
+}
+
+#left {
+  padding: 2%;
+  padding-left: 10%;
+  text-align: center;
+}
+
+#right {
+  padding: 2%;
+}
+
+#fahr {
+  font-size: 150%;
+  padding-right: 10%;
+}
+
+#cel {
+  margin-top: -5%;
+  font-size: 150%;
+}

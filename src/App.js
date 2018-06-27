@@ -1,7 +1,8 @@
 import React from "react";
 import Title from "./components/Title";
 import Form from "./components/Form";
-import Weather from "./components/Weather";
+import WeatherCurrent from "./components/WeatherCurrent";
+import WeatherFive from "./components/WeatherFive";
  
 const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -62,12 +63,12 @@ class App extends React.Component {
     iconNumber: undefined,
     currentTempF: undefined,
     currentTempC: undefined,
-    highTemp: undefined,
-    lowTemp: undefined,
+    fiveDays: undefined,
     locationKey: undefined
   }
 
   getWeatherData = async (e) => {
+
     e.preventDefault();
 
     const LOCATION = e.target.elements.location.value;
@@ -88,19 +89,18 @@ class App extends React.Component {
         currentTempC: CURRENT_DATA[0].Temperature.Metric.Value
       });
 
-      const FORECAST_API_CALL = await fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${API_KEY}`);
-      const FORECAST_DATA = await FORECAST_API_CALL.json();
-      // console.log(FORECAST_DATA);
+      const FIVEDAY_API_CALL = await fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${API_KEY}`);
+      const FIVEDAY_DATA = await FIVEDAY_API_CALL.json();
       this.setState({
         name: resultLocation.LocalizedName,
         area: resultLocation.AdministrativeArea.LocalizedName,
         country: resultLocation.Country.LocalizedName,
-        highTemp: FORECAST_DATA.DailyForecasts[0].Temperature.Maximum.Value,
-        lowTemp: FORECAST_DATA.DailyForecasts[0].Temperature.Minimum.Value,
+        fiveDays: FIVEDAY_DATA.DailyForecasts,
         locationKey: locationKey,
       });
+      console.log(this.state.currentTempF);
+      console.log(this.state.fiveDays);
     }
-
   }
 
   render() {
@@ -115,27 +115,28 @@ class App extends React.Component {
             </div>
             <div className="row justify-content-center">
               <div className="col-md-3" id="form-field">
-                <Form weather= { this.getWeatherData } />
+                <Form 
+                  weather = { this.getWeatherData }
+                />
               </div>
             </div>
             <div className="row justify-content-center">
               <div className="col-md-4">
                 { this.state.name && this.state.area && this.state.country && <h5 id="result-label">Results for { this.state.name }, { this.state.area }, { this.state.country }</h5> }
-                <Weather
-                  name = { this.state.name }
-                  area = { this.state.area }
-                  country = { this.state.country }
-                  weatherStatus = { this.state.weatherStatus }
-                  weatherImages = { weatherImages }
-                  iconNumber = { this.state.iconNumber }
-                  currentTempF = { this.state.currentTempF }
-                  currentTempC = { this.state.currentTempC }
-                  high = { this.state.highTemp }
-                  low = { this.state.lowTemp }
-                  locationKey = { this.state.locationKey }
-                />
               </div>
             </div>
+            <WeatherCurrent
+              weatherStatus = { this.state.weatherStatus }
+              weatherImages = { weatherImages }
+              iconNumber = { this.state.iconNumber }
+              currentTempF = { this.state.currentTempF }
+              currentTempC = { this.state.currentTempC }
+              locationKey = { this.state.locationKey }
+            />
+            <WeatherFive
+              fiveDays = { this.state.fiveDays }
+              weatherImages = { weatherImages }
+            />
           </div>
         </div>
       </div>
