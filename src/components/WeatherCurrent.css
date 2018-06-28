@@ -20,13 +20,13 @@
 }
 
 #current-temp {
+  text-align: center;
   margin-top: 6%;
   margin-bottom: 8%;
 }
 
 #left {
   padding: 2%;
-  padding-left: 10%;
   text-align: center;
 }
 
@@ -35,11 +35,12 @@
 }
 
 #fahr {
+  text-align: center;
   font-size: 150%;
-  padding-right: 10%;
 }
 
 #cel {
+  text-align: center;
   margin-top: -5%;
   font-size: 150%;
 }
