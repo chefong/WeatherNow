@@ -43,6 +43,10 @@
   padding-top: 10%;
 }
 
+.low {
+  padding-bottom: 10%;
+}
+
 .special-five {
   float: right;
 }
@@ -54,4 +58,10 @@
 .high-low-celsius {
   padding-right: 10%;
   float: right;
+}
+
+.high-low-container {
+  border-radius: 20px;
+  background-color: white;
+  margin-bottom: 10%;
 }
