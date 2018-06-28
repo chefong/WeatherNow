@@ -7,17 +7,28 @@
 
 .day-night {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 150%;
+  font-size: 120%;
   color: #484848;
   text-align: center;
-  letter-spacing: 10px;
-  text-transform: uppercase;
+  text-decoration: underline;
 }
 
 .weather-status-five-icon {
   width: 5vh;
+  margin-bottom: 2%;
 }
 
 .weather-image-five-container {
   text-align: center;
+}
+
+.day-of-week {
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 5%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #484848;
+  background-color: white;
+  padding-top: 2%;
+  border-radius: 100px;
 }

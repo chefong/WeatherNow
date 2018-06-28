@@ -11,15 +11,17 @@
 
 #current-text {
   font-family: 'Josefin Sans', sans-serif;
-  text-align: center;
-  letter-spacing: 2px;
+  letter-spacing: 8px;
   margin-top: 10%;
   color: #484848;
+  background-color: white;
+  border-radius: 100px;
+  text-align: center;
 }
 
 #current-temp {
   margin-top: 6%;
-  margin-bottom: 10%;
+  margin-bottom: 8%;
 }
 
 #left {
