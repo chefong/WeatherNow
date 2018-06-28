@@ -1,13 +1,13 @@
 .day-night-status {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 120%;
+  font-size: 1.5vw;
   color: #484848;
   text-align: center;
 }
 
 .day-night {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 120%;
+  font-size: 1.5vw;
   color: #484848;
   text-align: center;
   text-decoration: underline;
@@ -31,4 +31,27 @@
   background-color: white;
   padding-top: 2%;
   border-radius: 100px;
+}
+
+.five-temp {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.5vw;
+  color: #484848;
+}
+
+.high {
+  padding-top: 10%;
+}
+
+.special-five {
+  float: right;
+}
+
+.high-low-fahr {
+  padding-left: 10%;
+}
+
+.high-low-celsius {
+  padding-right: 10%;
+  float: right;
 }
