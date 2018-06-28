@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.e0c7d6d0.css",
-  "main.css.map": "static/css/main.e0c7d6d0.css.map",
-  "main.js": "static/js/main.029d7499.js",
-  "main.js.map": "static/js/main.029d7499.js.map",
+  "main.css": "static/css/main.13af6c98.css",
+  "main.css.map": "static/css/main.13af6c98.css.map",
+  "main.js": "static/js/main.1bd732cd.js",
+  "main.js.map": "static/js/main.1bd732cd.js.map",
   "static/media/1.png": "static/media/1.e33844fd.png",
   "static/media/11.png": "static/media/11.ce9c998d.png",
   "static/media/12.png": "static/media/12.79b9fa14.png",
@@ -41,6 +41,6 @@
   "static/media/5.png": "static/media/5.ce9c998d.png",
   "static/media/6.png": "static/media/6.0db88fad.png",
   "static/media/8.png": "static/media/8.59146f0b.png",
-  "static/media/minimalistic.png": "static/media/minimalistic.abaf5076.png",
+  "static/media/minimalistic.png": "static/media/minimalistic.ee178d3b.png",
   "static/media/weather-now-logo.png": "static/media/weather-now-logo.7b1bbee5.png"
 }
